@@ -194,9 +194,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 const officialBtn = document.querySelector('.chat-toggle') as HTMLElement;
                 if (officialBtn) {
                   officialBtn.click();
-                } else {
-                  const pillBtn = document.querySelector('[title="Open FitForge AI Coach"]') as HTMLElement;
-                  if (pillBtn) pillBtn.click();
                 }
               }}
               className="px-5 py-3 text-sm font-semibold text-[#CCFF00] hover:text-white bg-[#101420] hover:bg-[#181D29] border border-[#2B354C] hover:border-[#CCFF00]/60 rounded-lg transition-colors whitespace-nowrap flex items-center gap-2"

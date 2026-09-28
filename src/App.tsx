@@ -176,9 +176,6 @@ export default function App() {
           const officialBtn = document.querySelector('.chat-toggle') as HTMLElement;
           if (officialBtn) {
             officialBtn.click();
-          } else {
-            const pillBtn = document.querySelector('[title="Open FitForge AI Coach"]') as HTMLElement;
-            if (pillBtn) pillBtn.click();
           }
         }}
       />
@@ -313,7 +310,7 @@ export default function App() {
       />
 
       {/* Embedded n8n Fitness AI Chatbot */}
-      <N8nChatWidget currentUser={currentUser} />
+      <N8nChatWidget />
     </div>
   );
 }

@@ -26,3 +26,52 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #373e56;
 }
+
+/* =========================================
+   n8n Chat Embedded Widget Theming (Dark Gym)
+   ========================================= */
+:root {
+  --chat--color-primary: #CCFF00;
+  --chat--color-primary-shade-50: #b8e600;
+  --chat--color-primary-shade-100: #99cc00;
+  --chat--color-secondary: #090A0F;
+  --chat--color-light: #121622;
+  --chat--color-light-shade-50: #181D29;
+  --chat--color-light-shade-100: #232A3B;
+  --chat--color-dark: #FFFFFF;
+  --chat--color-disabled: #475569;
+  --chat--color-typing: #CCFF00;
+  --chat--font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --chat--border-radius: 16px;
+  --chat--window--width: 390px;
+  --chat--window--height: 580px;
+  --chat--toggle--background: #CCFF00;
+  --chat--toggle--color: #090A0F;
+  --chat--header--background: #090A0F;
+  --chat--header--color: #F8FAFC;
+  --chat--message--bot--background: #181D29;
+  --chat--message--bot--color: #F1F5F9;
+  --chat--message--user--background: #CCFF00;
+  --chat--message--user--color: #090A0F;
+}
+
+/* Ensure n8n floating widget stays above footers and has dark styling */
+.chat-window {
+  border: 1px solid #232A3B !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 25px rgba(204, 255, 0, 0.08) !important;
+  background-color: #0C0F17 !important;
+}
+
+.chat-header {
+  background-color: #090A0F !important;
+  border-bottom: 1px solid #1E2536 !important;
+}
+
+.chat-toggle {
+  box-shadow: 0 10px 25px -5px rgba(204, 255, 0, 0.35) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.05) !important;
+}

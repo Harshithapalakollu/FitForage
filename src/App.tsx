@@ -47,6 +47,7 @@ import { LogProgressModal } from './components/LogProgressModal';
 import { AuthModal } from './components/AuthModal';
 import { ProfileModal } from './components/ProfileModal';
 import { Footer } from './components/Footer';
+import { N8nChatWidget } from './components/N8nChatWidget';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
@@ -171,6 +172,15 @@ export default function App() {
         onOpenLogModal={() => setIsLogModalOpen(true)}
         onOpenProfile={() => setIsProfileOpen(true)}
         onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenChat={() => {
+          const officialBtn = document.querySelector('.chat-toggle') as HTMLElement;
+          if (officialBtn) {
+            officialBtn.click();
+          } else {
+            const pillBtn = document.querySelector('[title="Open FitForge AI Coach"]') as HTMLElement;
+            if (pillBtn) pillBtn.click();
+          }
+        }}
       />
 
       {/* Main Viewport Container */}
@@ -301,6 +311,9 @@ export default function App() {
         onOpenAuth={() => setIsAuthOpen(true)}
         onResetData={handleResetData}
       />
+
+      {/* Embedded n8n Fitness AI Chatbot */}
+      <N8nChatWidget currentUser={currentUser} />
     </div>
   );
 }

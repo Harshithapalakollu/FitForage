@@ -14,7 +14,9 @@ import {
   User, 
   PlusCircle, 
   Menu, 
-  X 
+  X,
+  Bot,
+  Sparkles
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -25,6 +27,7 @@ interface NavbarProps {
   onOpenLogModal: () => void;
   onOpenProfile: () => void;
   onOpenAuth: () => void;
+  onOpenChat?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -35,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenLogModal,
   onOpenProfile,
   onOpenAuth,
+  onOpenChat,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -119,6 +123,26 @@ export const Navbar: React.FC<NavbarProps> = ({
               title="Workout Stopwatch & Rest Timer"
             >
               <Timer className="w-4 h-4" />
+            </button>
+
+            {/* AI Coach Trigger */}
+            <button
+              onClick={() => {
+                if (onOpenChat) {
+                  onOpenChat();
+                } else {
+                  const btn = document.querySelector('.chat-toggle') as HTMLElement;
+                  if (btn) btn.click();
+                }
+              }}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#121622] hover:bg-[#181D29] border border-[#232A3B] hover:border-[#CCFF00]/50 text-slate-200 transition-colors group"
+              title="Ask FitForge AI Coach (n8n)"
+            >
+              <Bot className="w-4 h-4 text-[#CCFF00] group-hover:scale-110 transition-transform" />
+              <span className="hidden sm:inline-block text-xs font-semibold text-slate-200 font-mono">
+                Coach
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] animate-pulse"></span>
             </button>
 
             {/* User Profile / Account Switcher */}

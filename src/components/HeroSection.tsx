@@ -15,7 +15,8 @@ import {
   HeartPulse,
   Activity,
   Compass,
-  Trophy
+  Trophy,
+  Bot
 } from 'lucide-react';
 import heroImg from '../assets/images/fitforge_hero_gym_1790578630936.jpg';
 
@@ -186,6 +187,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               className="px-6 py-3 text-sm font-semibold text-slate-200 hover:text-white bg-[#161B27] hover:bg-[#1E2536] border border-[#2B354C] rounded-lg transition-colors whitespace-nowrap"
             >
               Explore Workouts
+            </button>
+
+            <button
+              onClick={() => {
+                const officialBtn = document.querySelector('.chat-toggle') as HTMLElement;
+                if (officialBtn) {
+                  officialBtn.click();
+                } else {
+                  const pillBtn = document.querySelector('[title="Open FitForge AI Coach"]') as HTMLElement;
+                  if (pillBtn) pillBtn.click();
+                }
+              }}
+              className="px-5 py-3 text-sm font-semibold text-[#CCFF00] hover:text-white bg-[#101420] hover:bg-[#181D29] border border-[#2B354C] hover:border-[#CCFF00]/60 rounded-lg transition-colors whitespace-nowrap flex items-center gap-2"
+              title="Chat with n8n AI Coach"
+            >
+              <Bot className="w-4 h-4 text-[#CCFF00]" />
+              <span>Ask AI Coach</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] animate-pulse"></span>
             </button>
           </div>
 

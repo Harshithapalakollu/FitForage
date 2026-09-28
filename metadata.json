@@ -1,0 +1,6 @@
+{
+  "name": "FitForge - Modern Fitness & Workout Intelligence",
+  "description": "Train smarter, eat better, and become stronger. Personalized workout routines, nutrition plans, interactive fitness calculators, and progress tracking for gym and home workouts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
